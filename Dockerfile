@@ -21,6 +21,8 @@ RUN groupadd -g $GID $GROUPNAME && \
 USER $USERNAME
 WORKDIR /home/$USERNAME/
 
+RUN mkdir /home/$USERNAME/share
+
 RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 # xserverの設定。hostのipアドレス:0.0
 RUN echo "export DISPLAY=host.docker.internal:0.0" >> ~/.bashrc
